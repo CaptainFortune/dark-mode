@@ -46,7 +46,7 @@ const HomePage = () => {
       </nav>
       <section>
         <div class="presentation">
-          <h1>Oh, Hi there ! I'm Layla 🌙</h1>
+          <h1>Oh, Hi there ! 🌙</h1>
           <button class="primary-btn">Connect with me</button>
         </div>
       </section>
