@@ -1,23 +1,19 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
-    render() {
+render() {
     return (
     <Html  lang="en">
         <Head></Head>
         <body>
-            <script
-            dangerouslySetInnerHTML={{
-                __html: themeInitializerScript,
-            }}
-            ></script>
+            <script dangerouslySetInnerHTML={{__html: themeInitializerScript,}}></script>
             <Main />
             <NextScript />
             </body>
             </Html>
-    );
+            );
+        }
     }
-}
 
 // This function needs to be a String
 const themeInitializerScript = `(function() {
