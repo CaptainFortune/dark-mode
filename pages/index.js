@@ -1,25 +1,58 @@
-export default function Home() {
+import { useEffect, useState } from 'react';
+
+const HomePage = () => {
+  const [darkTheme, setDarkTheme] = useState(undefined);
+
+  const handleToggle = (event) => {
+    setDarkTheme(event.target.checked);
+  };
+
+  useEffect(() => {
+    if (darkTheme !== undefined) {
+      if (darkTheme) {
+        // Set value of  darkmode to dark
+        document.documentElement.setAttribute('data-theme', 'dark');
+        window.localStorage.setItem('theme', 'dark');
+      } else {
+        // Set value of  darkmode to light
+        document.documentElement.removeAttribute('data-theme');
+        window.localStorage.setItem('theme', 'light');
+      }
+    }
+  }, [darkTheme]);
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const initialColorValue = root.style.getPropertyValue(
+      '--initial-color-mode'
+    );
+    // Set initial darkmode to light
+    setDarkTheme(initialColorValue === 'dark');
+  }, []);
+
   return (
     <>
-    <div className="container">
+    <div class="container">
       <nav>
-        <div className="mybrand">Mon Site</div>
+        <div class="siteName">Mon Site</div>
         <div>
           <form action="#">
-            <label className="switch">
-              <input type="checkbox"/>
-              <span className="slider"></span>
+            <label class="switch">
+              <input type="checkbox" unchecked={darkTheme} onChange={handleToggle}/>
+              <span class="slider"></span>
             </label>
           </form>
         </div>
       </nav>
       <section>
-        <div className="heroSection">
-          <h1>Oh, Hi there ! I'm Layla 🌒</h1>
-          <button className="primary-btn">Connect with me</button>
+        <div class="presentation">
+          <h1>Oh, Hi there ! I'm Layla 🌙</h1>
+          <button class="primary-btn">Connect with me</button>
         </div>
       </section>
     </div>
     </>
-  )
-}
+  );
+};
+
+export default HomePage;
