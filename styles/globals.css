@@ -2,21 +2,156 @@
 
 /* declaring the css variables colors */
 :root {
-  --color-primary-accent: #2614c7;
+  --color-primary-accent: #412279;
   --color-primary: #000;
-  --color-button: #3d486c;
+  --color-button: #412279;
   --color-paragraph: #797979;
   --color-button-text: rgb(255, 255, 255);
   --color-background: #fff;
-  --color-anchor: #000aff;
+  --color-anchor: #412279;
 }
 
 [data-theme='dark'] {
-  --color-primary-accent: #00ff4c;
+  --color-primary-accent: #BB96DC;
   --color-primary: #fff;
-  --color-button: #00ff4c;
+  --color-button: #BB96DC;
   --color-paragraph: #8a8a8a;
   --color-button-text: rgb(0, 0, 0);
-  --color-background: #22212b;
-  --color-anchor: #00ff4c;
+  --color-background: #100B1F;
+  --color-anchor: #BB96DC;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* swtich taken from W3 schools */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-button);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-button);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider {
+  border-radius: 34px;
+}
+
+.slider:before {
+  border-radius: 50%;
+}
+
+/* adding some custom CSS */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.siteName {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-primary);
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+}
+section .presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+}
+
+.presentation > h1 {
+  font-size: 55px;
+}
+
+.presentation > h3 {
+  padding: 30px 0px 15px 0px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.presentation > p {
+  font-size: 18px;
+  color: var(--color-paragraph);
+}
+
+.primary-btn {
+  cursor: pointer;
+  margin-top: 30px;
+  background: var(--color-button);
+  color: var(--color-button-text);
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-weight: bold;
+  font-size: 17px;
+  border: none;
+}
+
+
+
+a {
+  color: var(--color-anchor);
 }
