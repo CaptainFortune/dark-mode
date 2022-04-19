@@ -55,4 +55,5 @@ const HomePage = () => {
   );
 };
 // Tentative sneaky de branche
+// Quel petit malin !
 export default HomePage;
