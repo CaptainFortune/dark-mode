@@ -6,7 +6,7 @@ const HomePage = () => {
   const handleToggle = (event) => {
     setDarkTheme(event.target.checked);
   };
-
+// Olala c'est un trou noir
   useEffect(() => {
     if (darkTheme !== undefined) {
       if (darkTheme) {
